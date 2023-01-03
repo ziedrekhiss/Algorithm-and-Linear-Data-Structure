@@ -41,15 +41,15 @@ BEGIN
     sum:=0;
     test:=true;
     
-    FOR i FROM 1 TO set1.length-1 STEP 1  DO
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
         READ (set1[i]);
     END_FOR
     
-    FOR i FROM 1 TO set2.length-1 STEP 1  DO
+    FOR i FROM 0 TO set2.length-1 STEP 1  DO
         READ (set2[i]);
     END_FOR
     
-    FOR i FROM 0 TO set1.length STEP 1  DO
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
         FOR j FROM 0 TO set2.length-1 STEP 1  DO
             IF (set1[i]=set2[j]) THEN
                 test:=false;
@@ -61,7 +61,7 @@ BEGIN
         END_IF
     END_FOR
 
-    FOR i FROM 0 TO set2.length STEP 1  DO
+    FOR i FROM 0 TO set2.length-1 STEP 1  DO
         FOR j FROM 0 TO set1.length-1 STEP 1  DO
             IF (set2[i]=set1[j]) THEN
                 test:=false;
