@@ -38,11 +38,11 @@ var test = true;
 let sum = 0
 
 for (let i = 0; i < nbInSet1; i++) {
-    set1.push(+prompt('Enter set1 grade ' + (i+1)));
+    set1.push(+prompt('Enter set1 grade ' + (i+1) + ': '));
 }
 
 for (let i = 0; i < nbInSet2; i++) {
-    set2.push(+prompt('Enter set2 grade ' + (i+1)));
+    set2.push(+prompt('Enter set2 grade ' + (i+1) + ': '));
 }
 
 console.log(set1)
