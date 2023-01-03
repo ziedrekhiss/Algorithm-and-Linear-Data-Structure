@@ -1,0 +1,79 @@
+ALGORITHM first_task
+VAR
+    i := INTEGER;
+    c := CHAR;
+    sent := STRING;
+    word, vow := INTEGER    
+BEGIN
+    REPEAT
+        WRITE ("enter a charachter")
+        READ (c)
+        c:=toUpper(c)
+        sent:= sent + c
+    UNTIL (c='.')
+    word:=0; vow:=0;
+    
+    FOR i FROM 1 TO sent.length-1 STEP 1  DO
+        IF (sent[i] = ' ') THEN
+            word:= word + 1
+        END_IF
+        IF (sent[i]='A' or sent[i]='E' or sent[i]='I' or sent[i]='O' or sent[i]='U') THEN
+            vow:= vow +1
+        END_IF
+    END_FOR
+    IF (sent[sent.length-2]=' ')THEN
+        word:= word
+    ELSE
+        word:= word + 1
+    END_IF
+    write("The number of words in the sentence",word)
+    write("The number of vowels in the sentence",vow)
+    
+END
+
+
+ALGORITHM second_task
+VAR
+    set1 , set2 : ARRAY_OF INTEGER;
+    i, j, sum : INTEGER;
+    test : BOOLEAN;
+BEGIN
+    sum:=0;
+    test:=true;
+    
+    FOR i FROM 1 TO set1.length-1 STEP 1  DO
+        READ (set1[i]);
+    END_FOR
+    
+    FOR i FROM 1 TO set2.length-1 STEP 1  DO
+        READ (set2[i]);
+    END_FOR
+    
+    FOR i FROM 0 TO set1.length STEP 1  DO
+        FOR j FROM 0 TO set2.length-1 STEP 1  DO
+            IF (set1[i]=set2[j]) THEN
+                test:=false;
+                BREAK;
+            END_IF
+        END_FOR
+        IF (test=true) THEN
+            sum:=sum+set1[i];
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO set2.length STEP 1  DO
+        FOR j FROM 0 TO set1.length-1 STEP 1  DO
+            IF (set2[i]=set1[j]) THEN
+                test:=false;
+                BREAK;
+            END_IF
+        END_FOR
+        IF (test=true) THEN
+            sum:=sum+set2[i];
+        END_IF
+    END_FOR
+
+    WRITE ("the sum of distinct elements is",sum)
+END
+
+
